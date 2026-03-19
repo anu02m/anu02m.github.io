@@ -1032,3 +1032,24 @@ function drawContactCanvas() {
 }
 
 drawContactCanvas();
+
+// mobile canvas toggles
+document.querySelectorAll('.canvas-toggle').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const projectItem = btn.closest('.project-item');
+    const canvas = projectItem.querySelector('.project-canvas');
+    const isOpen = canvas.classList.contains('expanded');
+
+    canvas.classList.toggle('expanded');
+    btn.classList.toggle('open');
+    btn.textContent = isOpen ? '▾ View Animation' : '▴ Hide Animation';
+
+    // resize canvas after it becomes visible
+    if (!isOpen) {
+      setTimeout(() => {
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+      }, 50);
+    }
+  });
+});
