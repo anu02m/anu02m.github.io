@@ -146,22 +146,27 @@ body {
 }
 
 .btn-primary {
-  background: var(--accent);
-  color: #0d0d0d;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  background: none;
 }
 
 .btn-primary:hover {
-  opacity: 0.85;
+  background: var(--accent);
+  color: #0d0d0d;
+  opacity: 1;
 }
 
 .btn-outline {
   border: 1px solid var(--text-muted);
   color: var(--text-muted);
+  border-color: var(--accent);
 }
 
 .btn-outline:hover {
   border-color: var(--accent);
-  color: var(--accent);
+  color: #0d0d0d;
+  background: var(--accent)
 }
 /* About CSS */
 #about {
@@ -252,6 +257,10 @@ body {
   height: 100%;
   object-fit: cover;
   object-position: center top;
+}
+
+a{
+  text-decoration: none;
 }
 
 /* Skills-CSS */
@@ -446,6 +455,11 @@ body {
   position: relative;
 }
 
+.project-item:hover .project-number {
+  color: rgba(240, 165, 0, 0.4);
+  transition: color 0.3s ease;
+}
+
 .project-number {
   font-size: clamp(3rem, 6vw, 5rem);
   font-weight: 700;
@@ -453,6 +467,7 @@ body {
   line-height: 1;
   min-width: 80px;
   user-select: none;
+  transition: color 0.3s ease;
 }
 
 .project-content {
@@ -561,6 +576,128 @@ body {
   height: 100%;
   pointer-events: none;
   opacity: 0.8;
+}
+
+/* Certificates CSS */
+#certificates {
+  padding: 6rem 6%;
+}
+
+.certificates-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.certificates-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.cert-card {
+  background: var(--bg-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 2rem 1.8rem;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  position: relative;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+  min-height: 220px;
+}
+
+.cert-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+}
+
+.cert-icon {
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.cert-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
+}
+
+.cert-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.cert-issuer {
+  font-size: 0.98rem;
+  color: var(--accent);
+  font-weight: 400;
+}
+
+.cert-date {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  font-weight: 300;
+}
+
+.cert-arrow {
+  position: absolute;
+  top: 1.4rem;
+  right: 1.4rem;
+  font-size: 1rem;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+
+.view-all-btn {
+  border: 1px solid var(--text-muted);
+  color: var(--text-muted);
+  background: none;
+}
+
+.view-all-btn:hover {
+  border-color: var(--accent);
+  color: #0d0d0d;
+  background: var(--accent);
+}
+
+.cert-card:hover .cert-arrow {
+  color: var(--accent);
+}
+
+.view-all-btn {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+}
+
+.cert-card {
+  position: relative;
+  overflow: visible;
+}
+
+.cert-card::before {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.cert-card:hover::before {
+  opacity: 0.6;
 }
 
 /* Contact CSS */
