@@ -700,6 +700,87 @@ a{
   opacity: 0.6;
 }
 
+/* ── Education Section ── */
+#education {
+  padding: 6rem 6%;
+}
+
+.edu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  width: 100%;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.edu-card {
+  background: var(--bg-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 1.6rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+  position: relative;
+}
+
+.edu-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.edu-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(245, 166, 35, 0.1);
+  border: 1px solid rgba(245, 166, 35, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1.3rem;
+}
+
+.edu-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  flex: 1;
+}
+
+.edu-degree {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.edu-institution {
+  font-size: 1.05rem;
+  color: var(--accent);
+  font-weight: 400;
+}
+
+.edu-duration {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  font-weight: 300;
+  margin-top: 0.1rem;
+}
+
+.edu-badge {
+  font-size: 0.75rem;
+  color: var(--accent);
+  border: 1px solid rgba(245, 166, 35, 0.3);
+  padding: 3px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+  background: rgba(245, 166, 35, 0.07);
+}
+
 /* Contact CSS */
 #contact {
   padding: 6rem 10%;
